@@ -20,7 +20,7 @@ public class MarcaContrImpl implements IMarcaController{
     @Override
     public void ingresar(Marca m) {
         try {
-            IMarcaDao dao = (IMarcaDao) new MarcaDaoImpl();
+            IMarcaDao dao = new MarcaDaoImpl();
             dao.ingresar(m);
         } catch (Exception e) {
         }
