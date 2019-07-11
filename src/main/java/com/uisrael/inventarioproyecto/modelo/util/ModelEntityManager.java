@@ -5,6 +5,9 @@
  */
 package com.uisrael.inventarioproyecto.modelo.util;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,11 +18,16 @@ import javax.persistence.Persistence;
  * @author Doc1
  */
 public class ModelEntityManager {       
-    private EntityManagerFactory factory =  Persistence.createEntityManagerFactory("InventarioPU");
-    private EntityManager manager = factory.createEntityManager();
-    private EntityTransaction transaction = manager.getTransaction();
+    private EntityManagerFactory factory = null;
+    private EntityManager manager = null; 
+    private EntityTransaction transaction = null;
 
-    public ModelEntityManager() {
+    public ModelEntityManager() throws NamingException {
+        	
+        Context ctx = new InitialContext();
+        factory =  Persistence.createEntityManagerFactory("Inventario_Proj_PU");
+        manager = factory.createEntityManager();
+        transaction = manager.getTransaction();
     }
 
     public EntityManagerFactory getFactory() {

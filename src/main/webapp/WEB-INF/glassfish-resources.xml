@@ -10,5 +10,5 @@
         <property name="URL" value="jdbc:postgresql://localhost:5432/InventarioPA"/>
         <property name="driverClass" value="org.postgresql.Driver"/>
     </jdbc-connection-pool>    
-    <jdbc-resource enabled="true" jndi-name="java:app/JNDI_InvenPA" object-type="user" pool-name="post-gre-sql_projInventario_postgresPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/jn_Inventarios" object-type="user" pool-name="post-gre-sql_projInventario_postgresPool"/>
 </resources>

@@ -23,7 +23,7 @@ public class MarcaContrImpl implements IMarcaController{
             IMarcaDao dao = new MarcaDaoImpl();
             dao.ingresar(m);
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            System.err.println("Error:" +  e.getMessage());
         }
     }
 

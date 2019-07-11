@@ -19,8 +19,11 @@ import javax.persistence.*;
 public class Marca implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_Marca")
     private int idMarca;
+    @Column(name = "descripcion")
     private String descripcionMarca;
+    @Column(name = "estado")
     private int estadoMarca;
     
     @OneToMany(mappedBy = "marca")

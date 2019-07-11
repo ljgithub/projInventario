@@ -26,19 +26,19 @@ public class Producto implements Serializable{
     private double peso;
     private int estadoProducto;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdProveedor")
     private Proveedor proveedor;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdPresentacion")
     private Presentacion presentacion;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdMarca")
     private Marca marca;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdZona")
     private Zona zona;
 
