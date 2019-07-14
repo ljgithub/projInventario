@@ -25,7 +25,7 @@ public class Persona {
     private String ciudad;
     private String email;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fkIdTipoPersona")
     private TipoPersona tipoPersona;
     

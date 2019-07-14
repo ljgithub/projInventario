@@ -3,9 +3,14 @@
   <persistence-unit name="Inventario_Proj_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>java:app/datasourceInventario</jta-data-source>
-    <class>com.uisrael.inventarioproyecto.modelo.Entidades.Marca</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.DetallePedido</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.Persona</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Producto</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.Rol</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona</class>
+    <class>com.uisrael.inventarioproyecto.modelo.Entidades.UnidadMedida</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Zona</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>

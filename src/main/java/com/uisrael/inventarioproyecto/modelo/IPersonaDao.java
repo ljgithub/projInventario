@@ -5,7 +5,6 @@
  */
 package com.uisrael.inventarioproyecto.modelo;
 
-import com.uisrael.inventarioproyecto.controlador.*;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Persona;
 import java.util.List;
 

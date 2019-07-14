@@ -5,33 +5,33 @@
  */
 package com.uisrael.inventarioproyecto.controlador.IMPL;
 
-import com.uisrael.inventarioproyecto.controlador.IProveedorController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
+import com.uisrael.inventarioproyecto.controlador.IDetallePedidoController;
+import com.uisrael.inventarioproyecto.modelo.Entidades.DetallePedido;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class ProveedorContrImpl implements IProveedorController{
+public class DetallePedidoContrImpl implements IDetallePedidoController{
 
     @Override
-    public void ingresar(Proveedor m) {
+    public void ingresar(DetallePedido m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Proveedor actualizar(Proveedor m) {
+    public DetallePedido actualizar(DetallePedido m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void eliminar(Proveedor m) {
+    public void eliminar(DetallePedido m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Proveedor> listar(Proveedor m) {
+    public List<DetallePedido> listar(DetallePedido m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

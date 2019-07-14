@@ -5,9 +5,10 @@
  */
 package com.uisrael.inventarioproyecto.modelo.Entidades;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
 
 /**
  *
@@ -20,7 +21,7 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idPedido;
     @Temporal(TemporalType.DATE)
-    private DateTime fechaHoraPedido;
+    private Date fechaHoraPedido;
     private String observaciones;
     
     
@@ -34,7 +35,7 @@ public class Pedidos {
     public Pedidos() {
     }
 
-    public Pedidos(int idPedido, DateTime fechaHoraPedido, String observaciones, Proveedor proveedorPedido, List<DetallePedido> detallePedido) {
+    public Pedidos(int idPedido, Date fechaHoraPedido, String observaciones, Proveedor proveedorPedido, List<DetallePedido> detallePedido) {
         this.idPedido = idPedido;
         this.fechaHoraPedido = fechaHoraPedido;
         this.observaciones = observaciones;
@@ -50,11 +51,11 @@ public class Pedidos {
         this.idPedido = idPedido;
     }
 
-    public DateTime getFechaHoraPedido() {
+    public Date getFechaHoraPedido() {
         return fechaHoraPedido;
     }
 
-    public void setFechaHoraPedido(DateTime fechaHoraPedido) {
+    public void setFechaHoraPedido(Date fechaHoraPedido) {
         this.fechaHoraPedido = fechaHoraPedido;
     }
 
@@ -87,6 +88,5 @@ public class Pedidos {
         return "Pedidos{" + "idPedido=" + idPedido + ", fechaHoraPedido=" + fechaHoraPedido + ", observaciones=" + observaciones + ", proveedorPedido=" + proveedorPedido + ", detallePedido=" + detallePedido + '}';
     }
     
-   
-   
+    
 }

@@ -3,35 +3,42 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.controlador.IMPL;
+package com.uisrael.inventarioproyecto.modelo.Dao.Impl;
 
-import com.uisrael.inventarioproyecto.controlador.IProveedorController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
+import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
+import com.uisrael.inventarioproyecto.modelo.ITipoPersonaDao;
+import com.uisrael.inventarioproyecto.modelo.util.ModelEntityManager;
 import java.util.List;
+import javax.naming.NamingException;
 
 /**
  *
  * @author JAVIER
  */
-public class ProveedorContrImpl implements IProveedorController{
+public class TipoPersonaDaoImpl implements ITipoPersonaDao{
+
+    ModelEntityManager emf = new ModelEntityManager();
+
+  
+    @Override
+    public void ingresar(TipoPersona m) {
+        emf.getTransaction().begin();
+        emf.getManager().persist(m);
+        emf.getTransaction().commit();
+    }
 
     @Override
-    public void ingresar(Proveedor m) {
+    public TipoPersona actualizar(TipoPersona m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Proveedor actualizar(Proveedor m) {
+    public void eliminar(TipoPersona m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void eliminar(Proveedor m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Proveedor> listar(Proveedor m) {
+    public List<TipoPersona> listar(TipoPersona m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

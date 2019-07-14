@@ -5,16 +5,18 @@
  */
 package com.uisrael.inventarioproyecto.modelo;
 
-import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
 import java.util.List;
+
+
 
 /**
  *
  * @author JAVIER
  */
-public interface ITipoPersonaDao {
-    public void ingresar(TipoPersona m);
-    public TipoPersona actualizar(TipoPersona m);
-    public void eliminar(TipoPersona m);
-    public List<TipoPersona> listar(TipoPersona m);
+public interface IPedidoDao {
+    public void ingresar(Pedidos m);
+    public Pedidos actualizar(Pedidos m);
+    public void eliminar(Pedidos m);
+    public List<Pedidos> listar(Pedidos m);
 }

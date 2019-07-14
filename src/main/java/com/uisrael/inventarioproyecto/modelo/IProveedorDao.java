@@ -5,7 +5,6 @@
  */
 package com.uisrael.inventarioproyecto.modelo;
 
-import com.uisrael.inventarioproyecto.controlador.*;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
 import java.util.List;
 
@@ -14,8 +13,8 @@ import java.util.List;
  * @author JAVIER
  */
 public interface IProveedorDao {
- public void ingresar(Proveedor m);
+    public void ingresar(Proveedor m);
     public Proveedor actualizar(Proveedor m);
     public void eliminar(Proveedor m);
-    public List<Proveedor> listar(Proveedor m);   
+    public List<Proveedor> listar(Proveedor m);
 }

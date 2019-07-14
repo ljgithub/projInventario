@@ -22,9 +22,8 @@ public class ModelEntityManager {
     private EntityManager manager = null; 
     private EntityTransaction transaction = null;
 
-    public ModelEntityManager() throws NamingException {
-        	
-        Context ctx = new InitialContext();
+    public ModelEntityManager() {
+        	        
         factory =  Persistence.createEntityManagerFactory("Inventario_Proj_PU");
         manager = factory.createEntityManager();
         transaction = manager.getTransaction();

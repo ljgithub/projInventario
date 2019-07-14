@@ -5,16 +5,18 @@
  */
 package com.uisrael.inventarioproyecto.controlador;
 
-import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
 import java.util.List;
+
+
 
 /**
  *
  * @author JAVIER
  */
-public interface IRolDao {
-    public void ingresar(Rol m);
-    public Rol actualizar(Rol m);
-    public void eliminar(Rol m);
-    public List<Rol> listar(Rol m);
+public interface IPedidoController {
+    public void ingresar(Pedidos m);
+    public Pedidos actualizar(Pedidos m);
+    public void eliminar(Pedidos m);
+    public List<Pedidos> listar(Pedidos m);
 }
