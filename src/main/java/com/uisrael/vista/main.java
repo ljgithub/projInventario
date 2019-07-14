@@ -5,9 +5,6 @@
  */
 package com.uisrael.vista;
 
-import com.uisrael.inventarioproyecto.controlador.IMPL.MarcaContrImpl;
-import com.uisrael.inventarioproyecto.controlador.IMarcaController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Marca;
 
 /**
  *
@@ -17,12 +14,12 @@ public class main {
 
     public static void main(String [] args){
         
-        Marca m = new Marca();
+       /* Marca m = new Marca();
         m.setIdMarca(1);
         m.setDescripcionMarca("Genius");
         m.setEstadoMarca(1);
                 
         IMarcaController imc =  new MarcaContrImpl();
-        imc.ingresar(m);
+        imc.ingresar(m);*/
     }
 }

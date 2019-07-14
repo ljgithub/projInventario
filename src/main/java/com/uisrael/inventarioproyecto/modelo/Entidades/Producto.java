@@ -6,6 +6,7 @@
 package com.uisrael.inventarioproyecto.modelo.Entidades;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -20,44 +21,44 @@ public class Producto implements Serializable{
     private int idProducto;
     private String codigoProducto;
     private String descripcionProducto;
-    private double valorUnitario;
-    private char stock;
+    private double valorUnitario;    
     private int iva;
     private double peso;
+    private String marca;
     private int estadoProducto;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdProveedor")
     private Proveedor proveedor;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fk_IdPresentacion")
-    private Presentacion presentacion;
-    
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fk_IdMarca")
-    private Marca marca;
-    
+       
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_IdZona")
     private Zona zona;
 
+    @OneToMany (mappedBy = "producto")
+    private List<DetallePedido> detallePedido;
+
+    @ManyToOne
+    @JoinColumn(name = "fkIdUnidadMedidas")
+    private UnidadMedida unidadMedida;
+
     public Producto() {
     }
 
-    public Producto(int idProducto, String codigoProducto, String descripcionProducto, double valorUnitario, char stock, int iva, double peso, int estadoProducto, Proveedor proveedor, Presentacion presentacion, Marca marca, Zona zona) {
+    public Producto(int idProducto, String codigoProducto, String descripcionProducto, double valorUnitario, int iva, double peso, String marca, int estadoProducto, Proveedor proveedor, Zona zona, List<DetallePedido> detallePedido, UnidadMedida unidadMedida) {
         this.idProducto = idProducto;
         this.codigoProducto = codigoProducto;
         this.descripcionProducto = descripcionProducto;
         this.valorUnitario = valorUnitario;
-        this.stock = stock;
         this.iva = iva;
         this.peso = peso;
+        this.marca = marca;
         this.estadoProducto = estadoProducto;
         this.proveedor = proveedor;
-        this.presentacion = presentacion;
-        this.marca = marca;
         this.zona = zona;
+        this.detallePedido = detallePedido;
+        this.unidadMedida = unidadMedida;
     }
 
     public int getIdProducto() {
@@ -92,14 +93,6 @@ public class Producto implements Serializable{
         this.valorUnitario = valorUnitario;
     }
 
-    public char getStock() {
-        return stock;
-    }
-
-    public void setStock(char stock) {
-        this.stock = stock;
-    }
-
     public int getIva() {
         return iva;
     }
@@ -114,6 +107,14 @@ public class Producto implements Serializable{
 
     public void setPeso(double peso) {
         this.peso = peso;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public int getEstadoProducto() {
@@ -132,22 +133,6 @@ public class Producto implements Serializable{
         this.proveedor = proveedor;
     }
 
-    public Presentacion getPresentacion() {
-        return presentacion;
-    }
-
-    public void setPresentacion(Presentacion presentacion) {
-        this.presentacion = presentacion;
-    }
-
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
-
     public Zona getZona() {
         return zona;
     }
@@ -156,9 +141,25 @@ public class Producto implements Serializable{
         this.zona = zona;
     }
 
+    public List<DetallePedido> getDetallePedido() {
+        return detallePedido;
+    }
+
+    public void setDetallePedido(List<DetallePedido> detallePedido) {
+        this.detallePedido = detallePedido;
+    }
+
+    public UnidadMedida getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(UnidadMedida unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
+
     @Override
     public String toString() {
-        return "Producto{" + "idProducto=" + idProducto + ", codigoProducto=" + codigoProducto + ", descripcionProducto=" + descripcionProducto + ", valorUnitario=" + valorUnitario + ", stock=" + stock + ", iva=" + iva + ", peso=" + peso + ", estadoProducto=" + estadoProducto + ", proveedor=" + proveedor + ", presentacion=" + presentacion + ", marca=" + marca + ", zona=" + zona + '}';
+        return "Producto{" + "idProducto=" + idProducto + ", codigoProducto=" + codigoProducto + ", descripcionProducto=" + descripcionProducto + ", valorUnitario=" + valorUnitario + ", iva=" + iva + ", peso=" + peso + ", marca=" + marca + ", estadoProducto=" + estadoProducto + ", proveedor=" + proveedor + ", zona=" + zona + ", detallePedido=" + detallePedido + ", unidadMedida=" + unidadMedida + '}';
     }
     
     

@@ -5,16 +5,16 @@
  */
 package com.uisrael.inventarioproyecto.controlador;
 
-import com.uisrael.inventarioproyecto.modelo.Entidades.Marca;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public interface IMarcaController {
-    public void ingresar(Marca m);
-    public Marca actualizar(Marca m);
-    public void eliminar(Marca m);
-    public List<Marca> listar(Marca m);
+public interface IRolController {
+    public void ingresar(Rol m);
+    public Rol actualizar(Rol m);
+    public void eliminar(Rol m);
+    public List<Rol> listar(Rol m);
 }

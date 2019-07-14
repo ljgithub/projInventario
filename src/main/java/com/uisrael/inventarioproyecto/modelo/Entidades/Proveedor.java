@@ -25,6 +25,9 @@ public class Proveedor implements Serializable{
     
     @OneToMany(mappedBy = "proveedor")
     private List<Producto> productos = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "proveedorPedido")
+    private List<Pedidos> pedido = new ArrayList<Pedidos>();
 
     public Proveedor() {
     }
@@ -67,10 +70,19 @@ public class Proveedor implements Serializable{
         this.productos = productos;
     }
 
+    public List<Pedidos> getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(List<Pedidos> pedido) {
+        this.pedido = pedido;
+    }
+
     @Override
     public String toString() {
-        return "Proveedor{" + "idProveedor=" + idProveedor + ", descripcion=" + descripcion + ", estadoProveedor=" + estadoProveedor + ", productos=" + productos + '}';
+        return "Proveedor{" + "idProveedor=" + idProveedor + ", descripcion=" + descripcion + ", estadoProveedor=" + estadoProveedor + ", productos=" + productos + ", pedido=" + pedido + '}';
     }
+     
     
-   
+    
 }

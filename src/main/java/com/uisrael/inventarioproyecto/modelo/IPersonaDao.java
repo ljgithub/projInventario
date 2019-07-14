@@ -6,16 +6,17 @@
 package com.uisrael.inventarioproyecto.modelo;
 
 import com.uisrael.inventarioproyecto.controlador.*;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Presentacion;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Persona;
 import java.util.List;
+
 
 /**
  *
  * @author JAVIER
  */
-public interface IPresentacionDao {
-    public void ingresar(Presentacion m);
-    public Presentacion actualizar(Presentacion m);
-    public void eliminar(Presentacion m);
-    public List<Presentacion> listar(Presentacion m);
+public interface IPersonaDao {
+    public void ingresar(Persona m);
+    public Persona actualizar(Persona m);
+    public void eliminar(Persona m);
+    public List<Persona> listar(Persona m);
 }

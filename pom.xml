@@ -64,29 +64,20 @@
         </plugins>
     </build>
     
-    <repositories>
+     <repositories>
         <repository>
             <url>http://repository.primefaces.org/</url>
             <id>PrimeFaces-maven-lib</id>
             <layout>default</layout>
             <name>Repository for library PrimeFaces-maven-lib</name>
         </repository>
-        <repository>
-            <id>Java.Net</id>
-            <url>http://download.java.net/maven/2/</url>
-        </repository>
-    </repositories>
+    </repositories>    
     
     <dependencies>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>2.5.1</version>            
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.4.1209</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -96,13 +87,28 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>5.0</version>
+            <version>6.0</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>           
         </dependency>  
-
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4-1200-jdbc41</version>
+        </dependency>
+         <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>5.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions
+            </groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.8</version>
+        </dependency>
     </dependencies>
 </project>
