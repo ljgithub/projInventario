@@ -16,5 +16,6 @@ public interface IProveedorDao {
     public void ingresar(Proveedor m);
     public Proveedor actualizar(Proveedor m);
     public void eliminar(Proveedor m);
-    public List<Proveedor> listar(Proveedor m);
+    public List<Proveedor> listar();
+    public Proveedor buscarPorid(int id);         
 }

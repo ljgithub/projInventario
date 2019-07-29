@@ -5,6 +5,7 @@
  */
 package com.uisrael.inventarioproyecto.modelo.Entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -15,7 +16,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "tipo_Persona")
-public class TipoPersona {
+public class TipoPersona implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idTipoPersona;

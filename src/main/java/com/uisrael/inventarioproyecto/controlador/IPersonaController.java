@@ -17,5 +17,7 @@ public interface IPersonaController {
     public void ingresar(Persona m);
     public Persona actualizar(Persona m);
     public void eliminar(Persona m);
-    public List<Persona> listar(Persona m);
+    public List<Persona> listar();
+    
+    public Persona buscarPorid(int id);         
 }

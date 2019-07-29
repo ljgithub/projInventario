@@ -19,6 +19,7 @@ public class UnidadMedida {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idMedida;
     private String TipoMedida;
+    private String estado;
 
     @OneToMany(mappedBy = "unidadMedida")
     private List<Producto> producto;
@@ -26,12 +27,24 @@ public class UnidadMedida {
     public UnidadMedida() {
     }
 
-    public UnidadMedida(int idMedida, String TipoMedida, List<Producto> producto) {
+    public UnidadMedida(int idMedida, String TipoMedida, String estado, List<Producto> producto) {
         this.idMedida = idMedida;
         this.TipoMedida = TipoMedida;
+        this.estado = estado;
         this.producto = producto;
     }
 
+    
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    
+    
     public int getIdMedida() {
         return idMedida;
     }
@@ -58,8 +71,9 @@ public class UnidadMedida {
 
     @Override
     public String toString() {
-        return "UnidadMedida{" + "idMedida=" + idMedida + ", TipoMedida=" + TipoMedida + ", producto=" + producto + '}';
+        return "UnidadMedida{" + "idMedida=" + idMedida + ", TipoMedida=" + TipoMedida + ", estado=" + estado + ", producto=" + producto + '}';
     }
+
     
     
 }

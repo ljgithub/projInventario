@@ -19,4 +19,6 @@ public interface IPedidoController {
     public Pedidos actualizar(Pedidos m);
     public void eliminar(Pedidos m);
     public List<Pedidos> listar(Pedidos m);
+    
+    public Pedidos buscarPorid(int id);         
 }

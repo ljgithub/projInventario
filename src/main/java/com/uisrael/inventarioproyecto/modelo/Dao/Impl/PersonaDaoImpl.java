@@ -3,35 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.controlador.IMPL;
+package com.uisrael.inventarioproyecto.modelo.Dao.Impl;
 
-import com.uisrael.inventarioproyecto.controlador.IProductoController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Producto;
+import com.uisrael.inventarioproyecto.controlador.IMPL.*;
+import com.uisrael.inventarioproyecto.controlador.IPersonaController;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Persona;
+import com.uisrael.inventarioproyecto.modelo.IPersonaDao;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class ProductoContrImpl implements IProductoController{
+public class PersonaDaoImpl extends GenericaDaoImpl<Persona> implements IPersonaDao{
 
     @Override
-    public void ingresar(Producto m) {
+    public void ingresar(Persona m) {
+        this.create(m);
+        System.out.println("Persona Creada : " + m);
+    }
+
+    @Override
+    public Persona actualizar(Persona m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Producto actualizar(Producto m) {
+    public void eliminar(Persona m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void eliminar(Producto m) {
+    public List<Persona> listar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Producto> listar(Producto m) {
+    public Persona buscarPorid(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -17,4 +17,6 @@ public interface IDetallePedidoController {
     public DetallePedido actualizar(DetallePedido m);
     public void eliminar(DetallePedido m);
     public List<DetallePedido> listar(DetallePedido m);
+    
+    public DetallePedido buscarPorid(int id);         
 }

@@ -6,7 +6,12 @@
 package com.uisrael.inventarioproyecto.controlador.IMPL;
 
 import com.uisrael.inventarioproyecto.controlador.IPedidoController;
+import com.uisrael.inventarioproyecto.modelo.Dao.Impl.PedidoDaoImpl;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
+
+
+import com.uisrael.inventarioproyecto.modelo.IPedidoDao;
+
 import java.util.List;
 
 /**
@@ -17,22 +22,32 @@ public class PedidoContrImpl implements IPedidoController{
 
     @Override
     public void ingresar(Pedidos m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IPedidoDao idao= new PedidoDaoImpl();
+        idao.ingresar(m);
     }
 
     @Override
     public Pedidos actualizar(Pedidos m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IPedidoDao idao= new PedidoDaoImpl();
+        return  idao.actualizar(m);
     }
 
     @Override
     public void eliminar(Pedidos m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IPedidoDao idao= new PedidoDaoImpl();
+        idao.eliminar(m);
     }
 
     @Override
     public List<Pedidos> listar(Pedidos m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IPedidoDao idao= new PedidoDaoImpl();
+        return idao.listar();
+    }
+
+    @Override
+    public Pedidos buscarPorid(int id) {
+        IPedidoDao idao= new PedidoDaoImpl();
+        return idao.buscarPorid(id);
     }
     
 }

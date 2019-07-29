@@ -1,16 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/principal.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="titulo">
+        Rol
+    </ui:define>
+
+    <ui:define name="cabecera">
+        <h1>Mantenimiento de Rol</h1>
+    </ui:define>
+
+    <ui:define name="content">
+
+        <h:form>
+            <table border="1">
+                <tr>
+                    <td>
+                        <h:panelGrid columns="1">            
+                            <p:outputLabel> Descripcion: </p:outputLabel>
+                            <p:inputText size="30" id="txtDescrip" value="#{rolBean.descripcion}"></p:inputText>                            
+                            <p:outputLabel> Estado: </p:outputLabel >
+                            <p:inputText size="30" value="#{rolBean.estado}"></p:inputText>         
+                        </h:panelGrid>
+                    </td>
+                    <td style="vertical-align: initial">
+
+
+                        <h:panelGrid style="float: outside">
+                            <p:panel>
+                                <p:commandButton value="Guardar" action="#{rolBean.insertar()}">                    
+                                </p:commandButton>
+                                <p:button value="Modificar">                    
+                                </p:button>
+                                <p:button value="Eliminar">                    
+                                </p:button>
+                            </p:panel>
+                        </h:panelGrid>
+
+
+                        <h:panelGrid>
+                            <p:panel>
+                                <p:dataTable var="list" value="#{tipoVehiculoBean.listaTipoVehiculos}">
+                                    <p:column headerText="Descripcion">
+                                        <h:outputText value="#{list.descripcionTipoVehiculo}" />
+                                    </p:column>
+
+                                    <p:column headerText="Funcion">
+                                        <h:outputText value="#{list.funcionTipoVehiculo}" />
+                                    </p:column>
+
+                                    <p:column headerText="Estado">
+                                        <h:outputText  />
+                                    </p:column>
+                                </p:dataTable>
+                            </p:panel>
+                        </h:panelGrid>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

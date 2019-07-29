@@ -16,5 +16,7 @@ public interface ITipoPersonaDao {
     public void ingresar(TipoPersona m);
     public TipoPersona actualizar(TipoPersona m);
     public void eliminar(TipoPersona m);
-    public List<TipoPersona> listar(TipoPersona m);
+    public List<TipoPersona> listar();
+    
+    public TipoPersona buscarPorid(int id);         
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.controlador;
+package com.uisrael.inventarioproyecto.modelo;
 
 import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
 import java.util.List;
@@ -16,5 +16,7 @@ public interface IRolDao {
     public void ingresar(Rol m);
     public Rol actualizar(Rol m);
     public void eliminar(Rol m);
-    public List<Rol> listar(Rol m);
+    public List<Rol> listar();
+    
+    public Rol buscarPorid(int id);         
 }

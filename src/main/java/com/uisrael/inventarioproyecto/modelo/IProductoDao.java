@@ -5,6 +5,7 @@
  */
 package com.uisrael.inventarioproyecto.modelo;
 
+
 import com.uisrael.inventarioproyecto.modelo.Entidades.Producto;
 import java.util.List;
 
@@ -16,5 +17,6 @@ public interface IProductoDao {
     public void ingresar(Producto m);
     public Producto actualizar(Producto m);
     public void eliminar(Producto m);
-    public List<Producto> listar(Producto m);
+    public List<Producto> listar();
+    public Producto buscarPorid(int id);         
 }

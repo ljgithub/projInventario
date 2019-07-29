@@ -5,6 +5,7 @@
  */
 package com.uisrael.inventarioproyecto.modelo;
 
+import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Persona;
 import java.util.List;
 
@@ -17,5 +18,7 @@ public interface IPersonaDao {
     public void ingresar(Persona m);
     public Persona actualizar(Persona m);
     public void eliminar(Persona m);
-    public List<Persona> listar(Persona m);
+    public List<Persona> listar();
+    
+    public Persona buscarPorid(int id);         
 }

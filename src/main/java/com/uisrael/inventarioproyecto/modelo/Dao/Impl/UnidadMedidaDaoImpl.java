@@ -3,52 +3,45 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.controlador.IMPL;
+package com.uisrael.inventarioproyecto.modelo.Dao.Impl;
 
-import com.uisrael.inventarioproyecto.controlador.IPedidoController;
+import com.uisrael.inventarioproyecto.controlador.IMPL.*;
 import com.uisrael.inventarioproyecto.controlador.IUnidadMedidaController;
-import com.uisrael.inventarioproyecto.modelo.Dao.Impl.UnidadMedidaDaoImpl;
 import com.uisrael.inventarioproyecto.modelo.Entidades.UnidadMedida;
-
-
 import com.uisrael.inventarioproyecto.modelo.IUnidadMedidaDao;
-
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class UnidadMedidaContrImpl implements IUnidadMedidaController{
+public class UnidadMedidaDaoImpl implements IUnidadMedidaDao{
 
     @Override
     public void ingresar(UnidadMedida m) {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
-        idao.ingresar(m);
+        
     }
 
     @Override
     public UnidadMedida actualizar(UnidadMedida m) {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
-        return  idao.actualizar(m);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void eliminar(UnidadMedida m) {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
-        idao.eliminar(m);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<UnidadMedida> listar() {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
-        return idao.listar();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
     @Override
     public UnidadMedida buscarPorid(int id) {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
-        return idao.buscarPorid(id);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

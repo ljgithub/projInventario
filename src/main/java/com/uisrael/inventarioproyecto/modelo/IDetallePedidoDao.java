@@ -17,5 +17,7 @@ public interface IDetallePedidoDao
     public void ingresar(DetallePedido m);
     public DetallePedido actualizar(DetallePedido m);
     public void eliminar(DetallePedido m);
-    public List<DetallePedido> listar(DetallePedido m);
+    public List<DetallePedido> listar();
+    
+    public DetallePedido buscarPorid(int id);         
 }

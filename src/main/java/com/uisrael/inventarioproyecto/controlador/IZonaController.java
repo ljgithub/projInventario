@@ -16,5 +16,7 @@ public interface IZonaController {
     public void ingresar(Zona m);
     public Zona actualizar(Zona m);
     public void eliminar(Zona m);
-    public List<Zona> listar(Zona m);
+    public List<Zona> listar();
+    
+    public Zona buscarPorid(int id);         
 }

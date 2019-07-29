@@ -16,5 +16,7 @@ public interface IUnidadMedidaDao {
     public void ingresar(UnidadMedida m);
     public UnidadMedida actualizar(UnidadMedida m);
     public void eliminar(UnidadMedida m);
-    public List<UnidadMedida> listar(UnidadMedida m);
+    public List<UnidadMedida> listar();
+    
+    public UnidadMedida buscarPorid(int id);         
 }

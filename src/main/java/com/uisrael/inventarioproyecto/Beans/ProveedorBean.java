@@ -1,26 +1,30 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.modelo.Entidades;
+package com.uisrael.inventarioproyecto.Beans;
 
+import com.uisrael.inventarioproyecto.controlador.IMPL.ProveedorContrImpl;
+import com.uisrael.inventarioproyecto.controlador.IProveedorController;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.*;
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+import javax.faces.view.ViewScoped;
 
 /**
  *
  * @author JAVIER
  */
-@Entity
-@Table(name = "proveedor")
-public class Proveedor implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idProveedor;
-      private String nombres;
+@ManagedBean(name = "proveedorBean")
+@ViewScoped
+public class ProveedorBean  implements Serializable{
+
+    private static final IProveedorController controllerProveedor = new ProveedorContrImpl();
+               
+    private String nombres;
     private String apellidos;
     private int telefono;
     private int celular;
@@ -29,23 +33,33 @@ public class Proveedor implements Serializable{
     private String email;
     private int estadoProveedor;
     
-    @OneToMany(mappedBy = "proveedor")
-    private List<Producto> productos = new ArrayList<>();
     
-    @OneToMany(mappedBy = "proveedorPedido")
-    private List<Pedidos> pedido = new ArrayList<Pedidos>();
-
-    public Proveedor() {
+   private Proveedor proveedor;
+    
+    /**
+     * Creates a new instance of ProveedorBean
+     */
+    public ProveedorBean() {
     }
 
-    public int getIdProveedor() {
-        return idProveedor;
+    @PostConstruct
+    public void init(){
+        
     }
-
-    public void setIdProveedor(int idProveedor) {
-        this.idProveedor = idProveedor;
+    
+    
+    public void insertarProveedor(){
+        proveedor = new Proveedor();
+        proveedor.setNombres(nombres);
+        proveedor.setApellidos(apellidos);
+        proveedor.setTelefono(telefono);
+        proveedor.setCelular(celular);
+        proveedor.setDireccion(direccion);
+        proveedor.setCiudad(ciudad);
+        proveedor.setEmail(email);
+        controllerProveedor.ingresar(proveedor);
     }
-
+    
     public String getNombres() {
         return nombres;
     }
@@ -109,23 +123,7 @@ public class Proveedor implements Serializable{
     public void setEstadoProveedor(int estadoProveedor) {
         this.estadoProveedor = estadoProveedor;
     }
-
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
-
-    public List<Pedidos> getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(List<Pedidos> pedido) {
-        this.pedido = pedido;
-    }
     
-    
+     
     
 }

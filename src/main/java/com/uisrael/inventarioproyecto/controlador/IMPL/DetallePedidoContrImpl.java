@@ -6,7 +6,9 @@
 package com.uisrael.inventarioproyecto.controlador.IMPL;
 
 import com.uisrael.inventarioproyecto.controlador.IDetallePedidoController;
+import com.uisrael.inventarioproyecto.modelo.Dao.Impl.DetallePedidoDaoImpl;
 import com.uisrael.inventarioproyecto.modelo.Entidades.DetallePedido;
+import com.uisrael.inventarioproyecto.modelo.IDetallePedidoDao;
 import java.util.List;
 
 /**
@@ -17,22 +19,32 @@ public class DetallePedidoContrImpl implements IDetallePedidoController{
 
     @Override
     public void ingresar(DetallePedido m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDetallePedidoDao idao= new DetallePedidoDaoImpl();
+        idao.ingresar(m);
     }
 
     @Override
     public DetallePedido actualizar(DetallePedido m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDetallePedidoDao idao= new DetallePedidoDaoImpl();
+        return  idao.actualizar(m);
     }
 
     @Override
     public void eliminar(DetallePedido m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDetallePedidoDao idao= new DetallePedidoDaoImpl();
+        idao.eliminar(m);
     }
 
     @Override
     public List<DetallePedido> listar(DetallePedido m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDetallePedidoDao idao= new DetallePedidoDaoImpl();
+        return idao.listar();
+    }
+
+    @Override
+    public DetallePedido buscarPorid(int id) {
+        IDetallePedidoDao idao= new DetallePedidoDaoImpl();
+        return idao.buscarPorid(id);
     }
     
 }

@@ -15,46 +15,49 @@
 
     <ui:define name="content">
 
-        <table border="1">
-            <tr>
-                <td>
-                    <h:panelGrid columns="1">            
-                        <p:outputLabel> Descripcion: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>
-                        <p:outputLabel> estado: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                    </h:panelGrid>
-                </td>
-                <td style="vertical-align: initial">
-                    <h:panelGrid style="float: outside">
-                        <p:panel>
-                            <p:commandButton value="Insertar" icon="fa fa-save">                    
-                            </p:commandButton>
-                            <p:commandButton value="Actualizar" icon="fa fa-pencil-square-o">                    
-                            </p:commandButton>
-                            <p:button value="Eliminar">                    
-                            </p:button>
-                        </p:panel>
-                    </h:panelGrid>
-                    <h:panelGrid>
-                        <p:panel>
-                            <p:dataTable var="car" value="#{dtBasicView.cars}">
-                                <p:column headerText="Descripcion">
-                                    <h:outputText value="#{car.id}" />
-                                </p:column>                                
+        <h:form>
+            <table border="1">
+                <tr>
+                    <td>
+                        <h:panelGrid columns="1">            
+                            <p:outputLabel> Razon Social    : </p:outputLabel><p:inputText size="30" value="#{proveedorBean.nombres}"/>                        
+                            <p:outputLabel> Apellidos: </p:outputLabel><p:inputText size="30" value="#{proveedorBean.apellidos}"/>
+                            <p:outputLabel> Telefono Convencional: </p:outputLabel><p:inputText size="30" value="#{proveedorBean.telefono}"/>
+                            <p:outputLabel> Celular: </p:outputLabel><p:inputText id="txtCelular" size="30" value="#{proveedorBean.celular}"/>
+                            <p:outputLabel> Direccion: </p:outputLabel><p:inputText size="30" value="#{proveedorBean.direccion}"/>
+                            <p:outputLabel> Ciudad: </p:outputLabel><p:inputText size="30" value="#{proveedorBean.ciudad}"/>
+                            <p:outputLabel> Email: </p:outputLabel><p:inputText size="30" value="#{proveedorBean.email}"/>                                                    
+                        </h:panelGrid>
+                        <p:keyFilter for="txtCelular" mask="num"/>
+                    </td>
+                    <td style="vertical-align: initial">
+                        <h:panelGrid style="float: outside">
+                            <p:panel>
+                                <p:commandButton value="Insertar" icon="fa fa-save" action="#{proveedorBean.insertarProveedor()}"/>                                                
+                                <p:commandButton value="Actualizar" icon="fa fa-pencil-square-o">                    
+                                </p:commandButton>
+                                <p:button value="Eliminar">                    
+                                </p:button>
+                            </p:panel>
+                        </h:panelGrid>
+                        <h:panelGrid>
+                            <p:panel>
+                                <p:dataTable var="car" value="#{dtBasicView.cars}">
+                                    <p:column headerText="Descripcion">
+                                        <h:outputText value="#{car.id}" />
+                                    </p:column>                                
 
-                                <p:column headerText="Estado">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>
-                            </p:dataTable>
-                        </p:panel>
-                    </h:panelGrid>
-                </td>
-            </tr>
-        </table>
+                                    <p:column headerText="Estado">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </p:panel>
+                        </h:panelGrid>
+                    </td>
+                </tr>
+            </table>
 
-
-
+        </h:form>
 
     </ui:define>
 

@@ -10,21 +10,18 @@ import com.uisrael.inventarioproyecto.modelo.ITipoPersonaDao;
 import com.uisrael.inventarioproyecto.modelo.util.ModelEntityManager;
 import java.util.List;
 import javax.naming.NamingException;
+import javax.persistence.TypedQuery;
 
 /**
  *
  * @author JAVIER
  */
-public class TipoPersonaDaoImpl implements ITipoPersonaDao{
+public class TipoPersonaDaoImpl extends GenericaDaoImpl<TipoPersona>implements ITipoPersonaDao{
 
-    ModelEntityManager emf = new ModelEntityManager();
-
-  
     @Override
     public void ingresar(TipoPersona m) {
-        emf.getTransaction().begin();
-        emf.getManager().persist(m);
-        emf.getTransaction().commit();
+       this.create(m);
+        System.out.println("Tipo Persona creado " + m);
     }
 
     @Override
@@ -38,8 +35,28 @@ public class TipoPersonaDaoImpl implements ITipoPersonaDao{
     }
 
     @Override
-    public List<TipoPersona> listar(TipoPersona m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<TipoPersona> listar() {
+        
+        String sentencia = "select t from TipoPersona t";
+
+        TypedQuery<TipoPersona> typed = this.entityManager.createQuery(sentencia, TipoPersona.class);
+                
+        List<TipoPersona> resultado = typed.getResultList();
+                        
+        return resultado;        
+        
+    
+    }
+
+    @Override
+    public TipoPersona buscarPorid(int id) {
+        String sentencia = "select t from TipoPersona t where t.idTipoPersona = " +id;
+
+        TypedQuery<TipoPersona> typed = this.entityManager.createQuery(sentencia, TipoPersona.class);
+                
+        TipoPersona resultado = typed.getSingleResult();
+                        
+        return resultado;
     }
     
 }

@@ -18,5 +18,7 @@ public interface IPedidoDao {
     public void ingresar(Pedidos m);
     public Pedidos actualizar(Pedidos m);
     public void eliminar(Pedidos m);
-    public List<Pedidos> listar(Pedidos m);
+    public List<Pedidos> listar();
+    
+    public Pedidos buscarPorid(int id);         
 }

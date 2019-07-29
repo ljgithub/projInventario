@@ -6,7 +6,13 @@
 package com.uisrael.inventarioproyecto.controlador.IMPL;
 
 import com.uisrael.inventarioproyecto.controlador.IRolController;
+import com.uisrael.inventarioproyecto.modelo.Dao.Impl.RolDaoImpl;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
+import com.uisrael.inventarioproyecto.modelo.IRolDao;
+
+
+
+
 import java.util.List;
 
 /**
@@ -17,22 +23,32 @@ public class RolContrImpl implements IRolController{
 
     @Override
     public void ingresar(Rol m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IRolDao idao= new RolDaoImpl();
+        idao.ingresar(m);
     }
 
     @Override
     public Rol actualizar(Rol m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IRolDao idao= new RolDaoImpl();
+        return  idao.actualizar(m);
     }
 
     @Override
     public void eliminar(Rol m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IRolDao idao= new RolDaoImpl();
+        idao.eliminar(m);
     }
 
     @Override
-    public List<Rol> listar(Rol m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Rol> listar() {
+        IRolDao idao= new RolDaoImpl();
+        return idao.listar();
+    }
+
+    @Override
+    public Rol buscarPorid(int id) {
+        IRolDao idao= new RolDaoImpl();
+        return idao.buscarPorid(id);
     }
     
 }

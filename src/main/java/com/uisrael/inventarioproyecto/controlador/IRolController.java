@@ -16,5 +16,7 @@ public interface IRolController {
     public void ingresar(Rol m);
     public Rol actualizar(Rol m);
     public void eliminar(Rol m);
-    public List<Rol> listar(Rol m);
+    public List<Rol> listar();
+    
+    public Rol buscarPorid(int id);         
 }
