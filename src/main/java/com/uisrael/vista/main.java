@@ -5,8 +5,9 @@
  */
 package com.uisrael.vista;
 
-import com.uisrael.inventarioproyecto.controlador.IMPL.TipoPersonaContrImpl;
-import com.uisrael.inventarioproyecto.controlador.ITipoPersonaController;
+import com.uisrael.inventarioproyecto.controlador.IMPL.RolContrImpl;
+import com.uisrael.inventarioproyecto.controlador.IRolController;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
 import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
 
 
@@ -18,12 +19,13 @@ public class main {
 
     public static void main(String [] args){
         
-        TipoPersona tipoPersona = new TipoPersona();
-        tipoPersona.setDescripcion("Usuario");
-        tipoPersona.setEstado(1);
-        
-        ITipoPersonaController itc = new TipoPersonaContrImpl();
-        itc.ingresar(tipoPersona);
+     Rol rol = new Rol();
+     rol.setDescripcionRol("Administrador");
+     rol.setEstado(1);
+     
+        IRolController controllerRol = new RolContrImpl();
+        controllerRol.ingresar(rol);
+     
         
     }
 }

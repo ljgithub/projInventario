@@ -5,7 +5,7 @@
  */
 package com.uisrael.inventarioproyecto.controlador;
 
-import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Cliente;
 import java.util.List;
 
 
@@ -13,11 +13,11 @@ import java.util.List;
  *
  * @author JAVIER
  */
-public interface IPersonaController {
-    public void ingresar(Usuario m);
-    public Usuario actualizar(Usuario m);
-    public void eliminar(Usuario m);
-    public List<Usuario> listar();
+public interface IClienteController {
+    public void ingresar(Cliente m);
+    public Cliente actualizar(Cliente m);
+    public void eliminar(Cliente m);
+    public List<Cliente> listar();
     
-    public Usuario buscarPorid(int id);         
+    public Cliente buscarPorid(int id);         
 }

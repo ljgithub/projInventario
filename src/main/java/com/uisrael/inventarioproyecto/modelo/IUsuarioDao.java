@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author JAVIER
  */
-public interface IPersonaDao {
+public interface IUsuarioDao {
     public void ingresar(Usuario m);
     public Usuario actualizar(Usuario m);
     public void eliminar(Usuario m);

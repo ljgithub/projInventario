@@ -25,7 +25,7 @@ public class TipoPersona implements Serializable{
     
     
     @OneToMany(mappedBy = "tipoPersona")
-    List<Persona> persona = new ArrayList<Persona>();
+    List<Usuario> persona = new ArrayList<Usuario>();
 
     public TipoPersona() {
     }
@@ -60,11 +60,11 @@ public class TipoPersona implements Serializable{
         this.estado = estado;
     }
 
-    public List<Persona> getPersona() {
+    public List<Usuario> getPersona() {
         return persona;
     }
 
-    public void setPersona(List<Persona> persona) {
+    public void setPersona(List<Usuario> persona) {
         this.persona = persona;
     }
 

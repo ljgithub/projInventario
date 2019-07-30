@@ -23,7 +23,7 @@ public class Rol {
     private int estado;
 
    @OneToMany(mappedBy = "rol") 
-   private List<Persona> persona = new ArrayList<Persona>();
+   private List<Usuario> persona = new ArrayList<Usuario>();
 
     public Rol() {
     }
@@ -58,11 +58,11 @@ public class Rol {
         this.estado = estado;
     }
 
-    public List<Persona> getPersona() {
+    public List<Usuario> getPersona() {
         return persona;
     }
 
-    public void setPersona(List<Persona> persona) {
+    public void setPersona(List<Usuario> persona) {
         this.persona = persona;
     }
 

@@ -5,6 +5,7 @@
  */
 package com.uisrael.inventarioproyecto.modelo.Entidades;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -12,11 +13,11 @@ import javax.persistence.*;
  * @author JAVIER
  */
 @Entity
-@Table(name = "persona")
-public class Persona {
+@Table(name = "usuario")
+public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idPersona;
+    private int idUsuario;
     private String nombres;
     private String apellidos;
     private int telefono;
@@ -25,37 +26,20 @@ public class Persona {
     private String ciudad;
     private String email;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fkIdTipoPersona")
-    private TipoPersona tipoPersona;
-    
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fkIdRol")
     private Rol rol;
 
-    public Persona() {
+    public Usuario() {
     }
 
-    public Persona(int idPersona, String nombres, String apellidos, int telefono, int celular, String direccion, String ciudad, String email, TipoPersona tipoPersona, Rol rol) {
-        this.idPersona = idPersona;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.celular = celular;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.email = email;
-        this.tipoPersona = tipoPersona;
-        this.rol = rol;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public int getIdPersona() {
-        return idPersona;
-    }
-
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombres() {
@@ -114,14 +98,6 @@ public class Persona {
         this.email = email;
     }
 
-    public TipoPersona getTipoPersona() {
-        return tipoPersona;
-    }
-
-    public void setTipoPersona(TipoPersona tipoPersona) {
-        this.tipoPersona = tipoPersona;
-    }
-
     public Rol getRol() {
         return rol;
     }
@@ -132,9 +108,8 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", nombres=" + nombres + ", apellidos=" + apellidos + ", telefono=" + telefono + ", celular=" + celular + ", direccion=" + direccion + ", ciudad=" + ciudad + ", email=" + email + ", tipoPersona=" + tipoPersona + ", rol=" + rol + '}';
+        return "Usuario{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apellidos=" + apellidos + ", telefono=" + telefono + ", celular=" + celular + ", direccion=" + direccion + ", ciudad=" + ciudad + ", email=" + email + ", rol=" + rol + '}';
     }
-    
-     
+
     
 }

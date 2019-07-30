@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.uisrael.inventarioproyecto.modelo;
+package com.uisrael.inventarioproyecto.controlador;
 
-import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
  *
  * @author JAVIER
  */
-public interface IPersonaDao {
+public interface IUsuarioController {
     public void ingresar(Usuario m);
     public Usuario actualizar(Usuario m);
     public void eliminar(Usuario m);

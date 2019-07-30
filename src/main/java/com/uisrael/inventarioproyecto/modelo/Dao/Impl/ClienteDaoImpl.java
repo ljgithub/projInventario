@@ -6,40 +6,40 @@
 package com.uisrael.inventarioproyecto.modelo.Dao.Impl;
 
 import com.uisrael.inventarioproyecto.controlador.IMPL.*;
-import com.uisrael.inventarioproyecto.controlador.IPersonaController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
-import com.uisrael.inventarioproyecto.modelo.IPersonaDao;
+import com.uisrael.inventarioproyecto.controlador.IClienteController;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Cliente;
+import com.uisrael.inventarioproyecto.modelo.IClienteDao;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class PersonaDaoImpl extends GenericaDaoImpl<Usuario> implements IPersonaDao{
+public class ClienteDaoImpl extends GenericaDaoImpl<Cliente> implements IClienteDao{
 
     @Override
-    public void ingresar(Usuario m) {
+    public void ingresar(Cliente m) {
         this.create(m);
-        System.out.println("Persona Creada : " + m);
+        System.out.println("Cliente Creada : " + m);
     }
 
     @Override
-    public Usuario actualizar(Usuario m) {
+    public Cliente actualizar(Cliente m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void eliminar(Usuario m) {
+    public void eliminar(Cliente m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Usuario> listar() {
+    public List<Cliente> listar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Usuario buscarPorid(int id) {
+    public Cliente buscarPorid(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

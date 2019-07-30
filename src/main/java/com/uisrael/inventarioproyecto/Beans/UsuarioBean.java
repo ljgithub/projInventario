@@ -6,10 +6,8 @@
 package com.uisrael.inventarioproyecto.Beans;
 
 import com.uisrael.inventarioproyecto.controlador.IMPL.PersonaContrImpl;
-import com.uisrael.inventarioproyecto.controlador.IMPL.TipoPersonaContrImpl;
 import com.uisrael.inventarioproyecto.controlador.IPersonaController;
-import com.uisrael.inventarioproyecto.controlador.ITipoPersonaController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Persona;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
 import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
@@ -21,11 +19,10 @@ import javax.faces.bean.ManagedBean;
  *
  * @author JAVIER
  */
-@ManagedBean(name = "personaBean")
+@ManagedBean(name = "usuarioBean")
 @Dependent
-public class PersonaBean implements Serializable{
-    
-    private static final ITipoPersonaController controllerTipoPersona = new TipoPersonaContrImpl();
+public class UsuarioBean implements Serializable{
+       
     private static final IPersonaController controllerPersona = new PersonaContrImpl();
     
     private String nombres;
@@ -36,7 +33,7 @@ public class PersonaBean implements Serializable{
     private String ciudad;
     private String email;
     
-    private Persona persona;
+    private Usuario usuario;
     
     private int fkIdTipoPersona;
     private TipoPersona tipoPersona;
@@ -44,7 +41,7 @@ public class PersonaBean implements Serializable{
     /**
      * Creates a new instance of PersonaBean
      */
-    public PersonaBean() {
+    public UsuarioBean() {
     }
     
     @PostConstruct
@@ -53,18 +50,17 @@ public class PersonaBean implements Serializable{
         fkIdTipoPersona = 351;
     }
     public void insertarPersona(){
-        persona = new Persona();
-        tipoPersona = controllerTipoPersona.buscarPorid(fkIdTipoPersona);
-        persona.setNombres(nombres);
-        persona.setApellidos(apellidos);
-        persona.setTelefono(telefono);
-        persona.setCelular(celular);
-        persona.setDireccion(direccion);
-        persona.setCiudad(ciudad);
-        persona.setEmail(email);
-        persona.setTipoPersona(tipoPersona);
+        usuario = new Usuario();        
+        usuario.setNombres(nombres);
+        usuario.setApellidos(apellidos);
+        usuario.setTelefono(telefono);
+        usuario.setCelular(celular);
+        usuario.setDireccion(direccion);
+        usuario.setCiudad(ciudad);
+        usuario.setEmail(email);
         
-        controllerPersona.ingresar(persona);
+        
+        controllerPersona.ingresar(usuario);
     }
 
     public String getNombres() {

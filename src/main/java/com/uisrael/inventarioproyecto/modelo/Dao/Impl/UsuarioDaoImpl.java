@@ -6,21 +6,21 @@
 package com.uisrael.inventarioproyecto.modelo.Dao.Impl;
 
 import com.uisrael.inventarioproyecto.controlador.IMPL.*;
-import com.uisrael.inventarioproyecto.controlador.IPersonaController;
+import com.uisrael.inventarioproyecto.controlador.IUsuarioController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
-import com.uisrael.inventarioproyecto.modelo.IPersonaDao;
+import com.uisrael.inventarioproyecto.modelo.IUsuarioDao;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class PersonaDaoImpl extends GenericaDaoImpl<Usuario> implements IPersonaDao{
+public class UsuarioDaoImpl extends GenericaDaoImpl<Usuario> implements IUsuarioDao{
 
     @Override
     public void ingresar(Usuario m) {
         this.create(m);
-        System.out.println("Persona Creada : " + m);
+        System.out.println("Usuario Creada : " + m);
     }
 
     @Override

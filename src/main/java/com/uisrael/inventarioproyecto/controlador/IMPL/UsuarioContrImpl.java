@@ -6,45 +6,45 @@
  */
 package com.uisrael.inventarioproyecto.controlador.IMPL;
 
-import com.uisrael.inventarioproyecto.controlador.IPersonaController;
-import com.uisrael.inventarioproyecto.modelo.Dao.Impl.PersonaDaoImpl;
+import com.uisrael.inventarioproyecto.controlador.IUsuarioController;
+import com.uisrael.inventarioproyecto.modelo.Dao.Impl.UsuarioDaoImpl;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
-import com.uisrael.inventarioproyecto.modelo.IPersonaDao;
+import com.uisrael.inventarioproyecto.modelo.IUsuarioDao;
 import java.util.List;
 
 /**
  *
  * @author JAVIER
  */
-public class PersonaContrImpl implements IPersonaController{
+public class UsuarioContrImpl implements IUsuarioController{
 
     @Override
     public void ingresar(Usuario m) {
-        IPersonaDao idao= new PersonaDaoImpl();
+        IUsuarioDao idao= new UsuarioDaoImpl();
         idao.ingresar(m);
     }
 
     @Override
     public Usuario actualizar(Usuario m) {
-        IPersonaDao idao= new PersonaDaoImpl();
+        IUsuarioDao idao= new UsuarioDaoImpl();
         return  idao.actualizar(m);
     }
 
     @Override
     public void eliminar(Usuario m) {
-        IPersonaDao idao= new PersonaDaoImpl();
+        IUsuarioDao idao= new UsuarioDaoImpl();
         idao.eliminar(m);
     }
 
     @Override
     public List<Usuario> listar() {
-        IPersonaDao idao= new PersonaDaoImpl();
+        IUsuarioDao idao= new UsuarioDaoImpl();
         return idao.listar();
     }
 
     @Override
     public Usuario buscarPorid(int id) {
-        IPersonaDao idao= new PersonaDaoImpl();
+        IUsuarioDao idao= new UsuarioDaoImpl();
         return idao.buscarPorid(id);
     }
     
