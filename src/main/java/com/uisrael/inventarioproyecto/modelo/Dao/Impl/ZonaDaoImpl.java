@@ -16,6 +16,15 @@ import java.util.List;
  */
 public class ZonaDaoImpl extends GenericaDaoImpl<Zona> implements IZonaDao{
 
+    public ZonaDaoImpl() {
+    }
+
+    public ZonaDaoImpl(Class<Zona> entityClass) {
+        super(entityClass);
+    }
+
+    
+    
     @Override
     public void ingresar(Zona m) {
         this.create(m);
@@ -33,7 +42,7 @@ public class ZonaDaoImpl extends GenericaDaoImpl<Zona> implements IZonaDao{
 
     @Override
     public List<Zona> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.findAll();
     }
 
     @Override

@@ -39,7 +39,7 @@ public class ZonaContrImpl implements IZonaController{
 
     @Override
     public List<Zona> listar() {
-        IZonaDao idao= new ZonaDaoImpl();
+        IZonaDao idao= new ZonaDaoImpl(Zona.class);
         return idao.listar();
     }
 

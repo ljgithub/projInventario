@@ -41,7 +41,7 @@ public class UnidadMedidaContrImpl implements IUnidadMedidaController{
 
     @Override
     public List<UnidadMedida> listar() {
-        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl();
+        IUnidadMedidaDao idao= new UnidadMedidaDaoImpl(UnidadMedida.class);
         return idao.listar();
     }
 

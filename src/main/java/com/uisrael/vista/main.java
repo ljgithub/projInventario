@@ -8,7 +8,6 @@ package com.uisrael.vista;
 import com.uisrael.inventarioproyecto.controlador.IMPL.RolContrImpl;
 import com.uisrael.inventarioproyecto.controlador.IRolController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
-import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
 
 
 /**

@@ -14,68 +14,65 @@
     </ui:define>
 
     <ui:define name="content">
+        <h:form>
+            <table border="1">
+                <tr>
+                    <td>
+                        <h:panelGrid columns="1">            
+                            <p:outputLabel> Cod Producto: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>
+                            <p:outputLabel> Descripcion: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>                                
+                            <p:outputLabel> Valor Unitario: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>                                
 
-        <table border="1">
-            <tr>
-                <td>
-                    <h:panelGrid columns="1">            
-                        <p:outputLabel> Cod Producto: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>
-                        <p:outputLabel> Descripcion: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                        <p:outputLabel> Valor Unitario: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                                                       
-                        <p:outputLabel> IVA: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                        <p:outputLabel> Peso: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                        <p:outputLabel> Estado: </p:outputLabel>
-                        <p:inputText size="30"></p:inputText>                                
-                    </h:panelGrid>
-                </td>
-                <td style="vertical-align: initial">
-                    <h:panelGrid style="float: outside">
-                        <p:panel>
-                            <p:commandButton value="Insertar" icon="fa fa-save">                    
-                            </p:commandButton>
-                            <p:commandButton value="Actualizar" icon="fa fa-pencil-square-o">                    
-                            </p:commandButton>
-                            <p:button value="Eliminar">                    
-                            </p:button>
-                        </p:panel>
-                    </h:panelGrid>
-                    <h:panelGrid>
-                        <p:panel>
-                            <p:dataTable var="car" value="#{dtBasicView.cars}">
-                                <p:column headerText="Cod Producto">
-                                    <h:outputText value="#{car.id}" />
-                                </p:column>                                
-                                <p:column headerText="Descripcion:">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>
-                                <p:column headerText="Valor Unitario">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>                                
-                                <p:column headerText="IVA">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>
-                                <p:column headerText="Peso">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>
-                                <p:column headerText="Estado">
-                                    <h:outputText value="#{car.brand}" />
-                                </p:column>
-                               
-                            </p:dataTable>
-                        </p:panel>
-                    </h:panelGrid>
-                </td>
-            </tr>
-        </table>
+                            <p:outputLabel> IVA: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>                                
+                            <p:outputLabel> Peso: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>                                
+                            <p:outputLabel> Estado: </p:outputLabel>
+                            <p:inputText size="30"></p:inputText>                                
+                        </h:panelGrid>
+                    </td>
+                    <td style="vertical-align: initial">
+                        <h:panelGrid style="float: outside">
+                            <p:panel>
+                                <p:commandButton value="Insertar" icon="fa fa-save" update="dt_Data">                                                    
+                                <p:commandButton value="Actualizar" icon="fa fa-pencil-square-o">                    
+                                </p:commandButton>
+                                <p:button value="Eliminar">                    
+                                </p:button>
+                            </p:panel>
+                        </h:panelGrid>
+                        <h:panelGrid>
+                            <p:panel>
+                                <p:dataTable id="dt_Data" var="car" value="#{dtBasicView.cars}">
+                                    <p:column headerText="Cod Producto">
+                                        <h:outputText value="#{car.id}" />
+                                    </p:column>                                
+                                    <p:column headerText="Descripcion:">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+                                    <p:column headerText="Valor Unitario">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>                                
+                                    <p:column headerText="IVA">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+                                    <p:column headerText="Peso">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+                                    <p:column headerText="Estado">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
 
-
-
+                                </p:dataTable>
+                            </p:panel>
+                        </h:panelGrid>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
 
     </ui:define>
 

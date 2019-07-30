@@ -9,6 +9,7 @@ import com.uisrael.inventarioproyecto.controlador.IMPL.UnidadMedidaContrImpl;
 import com.uisrael.inventarioproyecto.controlador.IUnidadMedidaController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.UnidadMedida;
 import java.io.Serializable;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -27,6 +28,7 @@ public class UnidadMedidaBean implements Serializable{
     private String estado;
     
     private UnidadMedida unidadMedida;
+    private List<UnidadMedida> consultaListaUnidadM;
     
     /**
      * Creates a new instance of UnidadMedidaBean
@@ -36,9 +38,12 @@ public class UnidadMedidaBean implements Serializable{
     
     @PostConstruct
     public void init(){
-        
+        llenarDatos();
     }
     
+    public void llenarDatos(){
+        consultaListaUnidadM = controllerUnidad.listar();
+    }
     
     public void insertar(){
         unidadMedida= new UnidadMedida();
@@ -46,6 +51,7 @@ public class UnidadMedidaBean implements Serializable{
         unidadMedida.setEstado(estado);
         
         controllerUnidad.ingresar(unidadMedida);
+        llenarDatos();
     }
 
     public String getUnidadMedidaDescrip() {
@@ -70,6 +76,14 @@ public class UnidadMedidaBean implements Serializable{
 
     public void setUnidadMedida(UnidadMedida unidadMedida) {
         this.unidadMedida = unidadMedida;
+    }
+
+    public List<UnidadMedida> getConsultaListaUnidadM() {
+        return consultaListaUnidadM;
+    }
+
+    public void setConsultaListaUnidadM(List<UnidadMedida> consultaListaUnidadM) {
+        this.consultaListaUnidadM = consultaListaUnidadM;
     }
     
     

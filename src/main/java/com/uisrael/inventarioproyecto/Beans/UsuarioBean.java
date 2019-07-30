@@ -8,7 +8,6 @@ package com.uisrael.inventarioproyecto.Beans;
 import com.uisrael.inventarioproyecto.controlador.IMPL.PersonaContrImpl;
 import com.uisrael.inventarioproyecto.controlador.IPersonaController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Usuario;
-import com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
@@ -34,9 +33,7 @@ public class UsuarioBean implements Serializable{
     private String email;
     
     private Usuario usuario;
-    
-    private int fkIdTipoPersona;
-    private TipoPersona tipoPersona;
+          
     
     /**
      * Creates a new instance of PersonaBean
@@ -46,8 +43,7 @@ public class UsuarioBean implements Serializable{
     
     @PostConstruct
     public void init(){
-        System.out.println("Personabean Creado");
-        fkIdTipoPersona = 351;
+        System.out.println("Personabean Creado");        
     }
     public void insertarPersona(){
         usuario = new Usuario();        
@@ -117,14 +113,6 @@ public class UsuarioBean implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getFkIdTipoPersona() {
-        return fkIdTipoPersona;
-    }
-
-    public void setFkIdTipoPersona(int fkIdTipoPersona) {
-        this.fkIdTipoPersona = fkIdTipoPersona;
     }
     
     

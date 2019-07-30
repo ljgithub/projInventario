@@ -15,8 +15,15 @@ import java.util.List;
  *
  * @author JAVIER
  */
-public class ProductoDaoImpl implements IProductoDao{
+public class ProductoDaoImpl extends GenericaDaoImpl<Producto>implements IProductoDao{
 
+    public ProductoDaoImpl() {
+    }
+
+    public ProductoDaoImpl(Class<Producto> entityClass) {
+        super(entityClass);
+    }
+    
     @Override
     public void ingresar(Producto m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -34,7 +41,7 @@ public class ProductoDaoImpl implements IProductoDao{
 
     @Override
     public List<Producto> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.findAll();
     }
 
     @Override

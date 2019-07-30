@@ -8,7 +8,6 @@
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Producto</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Rol</class>
-    <class>com.uisrael.inventarioproyecto.modelo.Entidades.TipoPersona</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.UnidadMedida</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Zona</class>
     <class>com.uisrael.inventarioproyecto.modelo.Entidades.Usuario</class>

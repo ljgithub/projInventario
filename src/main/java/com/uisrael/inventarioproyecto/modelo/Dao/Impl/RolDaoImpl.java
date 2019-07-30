@@ -16,6 +16,13 @@ import java.util.List;
  */
 public class RolDaoImpl extends GenericaDaoImpl<Rol> implements IRolDao{
 
+    public RolDaoImpl() {
+    }
+       
+    public RolDaoImpl(Class<Rol> entityClass) {
+        super(entityClass);
+    }    
+    
     @Override
     public void ingresar(Rol m) {
         this.create(m);
@@ -33,7 +40,7 @@ public class RolDaoImpl extends GenericaDaoImpl<Rol> implements IRolDao{
 
     @Override
     public List<Rol> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.findAll();
     }
 
     @Override

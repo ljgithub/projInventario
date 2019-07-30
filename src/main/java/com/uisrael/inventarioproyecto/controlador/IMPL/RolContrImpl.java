@@ -21,6 +21,8 @@ import java.util.List;
  */
 public class RolContrImpl implements IRolController{
 
+    
+    
     @Override
     public void ingresar(Rol m) {
         IRolDao idao= new RolDaoImpl();
@@ -41,7 +43,7 @@ public class RolContrImpl implements IRolController{
 
     @Override
     public List<Rol> listar() {
-        IRolDao idao= new RolDaoImpl();
+        IRolDao idao= new RolDaoImpl(Rol.class);
         return idao.listar();
     }
 

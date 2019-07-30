@@ -16,7 +16,7 @@ public interface IProductoController {
     public void ingresar(Producto m);
     public Producto actualizar(Producto m);
     public void eliminar(Producto m);
-    public List<Producto> listar(Producto m);
+    public List<Producto> listar();
     
     public Producto buscarPorid(int id);         
 }

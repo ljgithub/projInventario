@@ -9,6 +9,7 @@ import com.uisrael.inventarioproyecto.controlador.IMPL.RolContrImpl;
 import com.uisrael.inventarioproyecto.controlador.IRolController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Rol;
 import java.io.Serializable;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -28,6 +29,7 @@ public class RolBean implements Serializable{
     private int estado;
     
     private Rol rol;
+    private List<Rol> consultaListaRol;
     
     /**
      * Creates a new instance of RolBean
@@ -38,13 +40,20 @@ public class RolBean implements Serializable{
     
     @PostConstruct
     public void init(){
-        
+        llenarDatos();
+    }
+    
+    public void llenarDatos(){
+        consultaListaRol= controllerRol.listar();
     }
     
     public void insertar(){
+        rol = new Rol();
         rol.setDescripcionRol(descripcion);
         rol.setEstado(estado);
         controllerRol.ingresar(rol);
+        
+        llenarDatos();
     }
 
     public String getDescripcion() {
@@ -61,6 +70,14 @@ public class RolBean implements Serializable{
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public List<Rol> getConsultaListaRol() {
+        return consultaListaRol;
+    }
+
+    public void setConsultaListaRol(List<Rol> consultaListaRol) {
+        this.consultaListaRol = consultaListaRol;
     }
     
     

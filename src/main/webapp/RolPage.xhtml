@@ -15,7 +15,7 @@
 
     <ui:define name="content">
 
-        <h:form>
+        <h:form id="form_Rol" >
             <table border="1">
                 <tr>
                     <td>
@@ -31,8 +31,7 @@
 
                         <h:panelGrid style="float: outside">
                             <p:panel>
-                                <p:commandButton value="Guardar" action="#{rolBean.insertar()}">                    
-                                </p:commandButton>
+                                <p:commandButton value="Guardar" action="#{rolBean.insertar()}" update="dt_Data"/>                                                   
                                 <p:button value="Modificar">                    
                                 </p:button>
                                 <p:button value="Eliminar">                    
@@ -43,17 +42,17 @@
 
                         <h:panelGrid>
                             <p:panel>
-                                <p:dataTable var="list" value="#{tipoVehiculoBean.listaTipoVehiculos}">
+                                
+                                <p:dataTable id="dt_Data" var="list" value="#{rolBean.consultaListaRol}" widgetVar="dt_Data">
+                                    <p:column headerText="Id">
+                                        <h:outputText value="#{list.idRol}" />
+                                    </p:column>
+                                    
                                     <p:column headerText="Descripcion">
-                                        <h:outputText value="#{list.descripcionTipoVehiculo}" />
+                                        <h:outputText value="#{list.descripcionRol}" />
                                     </p:column>
-
-                                    <p:column headerText="Funcion">
-                                        <h:outputText value="#{list.funcionTipoVehiculo}" />
-                                    </p:column>
-
                                     <p:column headerText="Estado">
-                                        <h:outputText  />
+                                        <h:outputText  value="#{list.estado}" />
                                     </p:column>
                                 </p:dataTable>
                             </p:panel>
