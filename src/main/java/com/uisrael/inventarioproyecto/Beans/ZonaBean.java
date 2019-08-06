@@ -12,8 +12,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.inject.Named;
 import javax.faces.view.ViewScoped;
+
 
 /**
  *
@@ -41,7 +41,7 @@ public class ZonaBean implements Serializable{
     @PostConstruct
     public void init(){
         llenarDatos();
-    }
+    }   
     
     public void llenarDatos(){
         consultaListaZonas = controllerZona.listar();

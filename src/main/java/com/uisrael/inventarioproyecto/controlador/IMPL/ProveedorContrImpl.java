@@ -42,7 +42,7 @@ public class ProveedorContrImpl implements IProveedorController{
 
     @Override
     public List<Proveedor> listar() {
-        IProveedorDao idao= new ProveedorDaoImpl();
+        IProveedorDao idao= new ProveedorDaoImpl(Proveedor.class);
         return idao.listar();
     }
 

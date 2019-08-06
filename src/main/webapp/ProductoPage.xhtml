@@ -3,7 +3,8 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="/principal.xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="titulo">
         Producto
@@ -19,25 +20,36 @@
                 <tr>
                     <td>
                         <h:panelGrid columns="1">            
-                            <p:outputLabel> Cod Producto: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>
-                            <p:outputLabel> Descripcion: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>                                
-                            <p:outputLabel> Valor Unitario: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>                                
+                            <p:outputLabel> Cod Producto: </p:outputLabel><p:inputText size="30" value="#{productoBean.codigoProducto}"/>                            
+                            <p:outputLabel> Descripcion: </p:outputLabel><p:inputText size="30" value="#{productoBean.descripcionProducto}"/>                                                   
+                            <p:outputLabel> Valor Unitario: </p:outputLabel><p:inputText size="30" value="#{productoBean.valorUnitario}"/>                            
+                            <p:outputLabel> IVA: </p:outputLabel><p:inputText size="30" value="#{productoBean.iva}"/>                                               
+                            <p:outputLabel> Peso: </p:outputLabel><p:inputText size="30" value="#{productoBean.peso}"/>                                               
+                            
+                            <p:selectOneMenu id="cb_UMedida" style="width: 150px" value="#{productoBean.fkIdUnidadMedida}">
+                                <f:selectItem itemLabel="Seleccione Unidad Medida" itemValue="0"></f:selectItem>
+                                <f:selectItems value="#{productoBean.consultaListaUnidadM}" var="itemUMedida" itemLabel="#{itemUMedida.tipoMedida}" itemValue="#{itemUMedida.idMedida}"></f:selectItems>
+                            </p:selectOneMenu>
+                            
+                            <p:selectOneMenu id="cb_Zona" style="width: 150px" value="#{productoBean.fkIdZona}">
+                                <f:selectItem itemLabel="Seleccione Zona de Almacenaje" itemValue="0"></f:selectItem>
+                                <f:selectItems value="#{productoBean.consultaListaZona}" var="itemZona" itemLabel="#{itemZona.descripcion}" itemValue="#{itemZona.idZona}"></f:selectItems>
+                            </p:selectOneMenu>
+                            
+                            <p:selectOneMenu id="cb_Provee" style="width: 150px" value="#{productoBean.fkIdProveedor}">
+                                <f:selectItem itemLabel="Seleccione Proveedor" itemValue="0"></f:selectItem>
+                                <f:selectItems value="#{productoBean.consultaListaProveedor}" var="itemProve" itemLabel="#{itemProve.nombres}" itemValue="#{itemProve.idProveedor}"></f:selectItems>
+                            </p:selectOneMenu>
+                            
+                            <p:outputLabel> Estado: </p:outputLabel><p:inputText size="30" value="#{productoBean.estadoProducto}"/>
 
-                            <p:outputLabel> IVA: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>                                
-                            <p:outputLabel> Peso: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>                                
-                            <p:outputLabel> Estado: </p:outputLabel>
-                            <p:inputText size="30"></p:inputText>                                
+                            
                         </h:panelGrid>
                     </td>
                     <td style="vertical-align: initial">
                         <h:panelGrid style="float: outside">
                             <p:panel>
-                                <p:commandButton value="Insertar" icon="fa fa-save" update="dt_Data">                                                    
+                                <p:commandButton value="Insertar" icon="fa fa-save" action="#{productoBean.insertar()}" update="dt_Data"/>                                                    
                                 <p:commandButton value="Actualizar" icon="fa fa-pencil-square-o">                    
                                 </p:commandButton>
                                 <p:button value="Eliminar">                    
@@ -46,24 +58,24 @@
                         </h:panelGrid>
                         <h:panelGrid>
                             <p:panel>
-                                <p:dataTable id="dt_Data" var="car" value="#{dtBasicView.cars}">
+                                <p:dataTable id="dt_Data" var="item" value="#{productoBean.consultaListaProducto}">
                                     <p:column headerText="Cod Producto">
-                                        <h:outputText value="#{car.id}" />
+                                        <h:outputText value="#{item.codigoProducto}" />
                                     </p:column>                                
                                     <p:column headerText="Descripcion:">
-                                        <h:outputText value="#{car.brand}" />
+                                        <h:outputText value="#{item.descripcionProducto}" />
                                     </p:column>
                                     <p:column headerText="Valor Unitario">
-                                        <h:outputText value="#{car.brand}" />
+                                        <h:outputText value="#{item.valorUnitario}" />
                                     </p:column>                                
                                     <p:column headerText="IVA">
-                                        <h:outputText value="#{car.brand}" />
+                                        <h:outputText value="#{item.iva}" />
                                     </p:column>
                                     <p:column headerText="Peso">
-                                        <h:outputText value="#{car.brand}" />
+                                        <h:outputText value="#{item.peso}" />
                                     </p:column>
                                     <p:column headerText="Estado">
-                                        <h:outputText value="#{car.brand}" />
+                                        <h:outputText value="#{item.estadoProducto}" />
                                     </p:column>
 
                                 </p:dataTable>

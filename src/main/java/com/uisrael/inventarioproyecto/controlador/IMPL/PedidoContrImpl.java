@@ -39,8 +39,8 @@ public class PedidoContrImpl implements IPedidoController{
     }
 
     @Override
-    public List<Pedidos> listar(Pedidos m) {
-        IPedidoDao idao= new PedidoDaoImpl();
+    public List<Pedidos> listar() {
+        IPedidoDao idao= new PedidoDaoImpl(Pedidos.class);
         return idao.listar();
     }
 

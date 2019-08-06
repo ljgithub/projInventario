@@ -38,7 +38,7 @@ public class ClienteContrImpl implements IClienteController{
 
     @Override
     public List<Cliente> listar() {
-        IClienteDao idao= new ClienteDaoImpl();
+        IClienteDao idao= new ClienteDaoImpl(Cliente.class);
         return idao.listar();
     }
 

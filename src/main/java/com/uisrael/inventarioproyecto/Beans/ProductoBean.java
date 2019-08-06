@@ -51,6 +51,9 @@ public class ProductoBean implements Serializable {
     private int fkIdUnidadMedida;
 
     private List<Producto> consultaListaProducto;
+    private List<Proveedor> consultaListaProveedor;
+    private List<Zona> consultaListaZona;
+    private List<UnidadMedida> consultaListaUnidadM;
 
     private Producto producto;
     private Proveedor proveedor;
@@ -70,9 +73,14 @@ public class ProductoBean implements Serializable {
 
     public void llenarDatos() {
         consultaListaProducto = controllerProducto.listar();
+        consultaListaProveedor = controllerProveedor.listar();
+        consultaListaUnidadM = controllerUnidadM.listar();
+        consultaListaZona = controllerZona.listar();
     }
 
     public void insertar() {
+        
+        producto = new Producto();
         proveedor = controllerProveedor.buscarPorid(fkIdProveedor);
         unidadMedida = controllerUnidadM.buscarPorid(fkIdUnidadMedida);
         zona = controllerZona.buscarPorid(fkIdZona);
@@ -88,6 +96,11 @@ public class ProductoBean implements Serializable {
         producto.setValorUnitario(valorUnitario);
         producto.setZona(zona);
         
+        producto.setProveedor(proveedor);
+        producto.setZona(zona);
+        producto.setUnidadMedida(unidadMedida);
+        
+        controllerProducto.ingresar(producto);
         llenarDatos();
     }
 
@@ -187,4 +200,61 @@ public class ProductoBean implements Serializable {
         this.unidadMedida = unidadMedida;
     }
 
+    public int getFkIdProveedor() {
+        return fkIdProveedor;
+    }
+
+    public void setFkIdProveedor(int fkIdProveedor) {
+        this.fkIdProveedor = fkIdProveedor;
+    }
+
+    public int getFkIdZona() {
+        return fkIdZona;
+    }
+
+    public void setFkIdZona(int fkIdZona) {
+        this.fkIdZona = fkIdZona;
+    }
+
+    public int getFkIdUnidadMedida() {
+        return fkIdUnidadMedida;
+    }
+
+    public void setFkIdUnidadMedida(int fkIdUnidadMedida) {
+        this.fkIdUnidadMedida = fkIdUnidadMedida;
+    }
+
+    public List<Producto> getConsultaListaProducto() {
+        return consultaListaProducto;
+    }
+
+    public void setConsultaListaProducto(List<Producto> consultaListaProducto) {
+        this.consultaListaProducto = consultaListaProducto;
+    }
+
+    public List<Proveedor> getConsultaListaProveedor() {
+        return consultaListaProveedor;
+    }
+
+    public void setConsultaListaProveedor(List<Proveedor> consultaListaProveedor) {
+        this.consultaListaProveedor = consultaListaProveedor;
+    }
+
+    public List<Zona> getConsultaListaZona() {
+        return consultaListaZona;
+    }
+
+    public void setConsultaListaZona(List<Zona> consultaListaZona) {
+        this.consultaListaZona = consultaListaZona;
+    }
+
+    public List<UnidadMedida> getConsultaListaUnidadM() {
+        return consultaListaUnidadM;
+    }
+
+    public void setConsultaListaUnidadM(List<UnidadMedida> consultaListaUnidadM) {
+        this.consultaListaUnidadM = consultaListaUnidadM;
+    }
+
+     
 }

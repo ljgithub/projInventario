@@ -10,6 +10,7 @@ import com.uisrael.inventarioproyecto.controlador.IClienteController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Cliente;
 import com.uisrael.inventarioproyecto.modelo.IClienteDao;
 import java.util.List;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -17,6 +18,15 @@ import java.util.List;
  */
 public class ClienteDaoImpl extends GenericaDaoImpl<Cliente> implements IClienteDao{
 
+    public ClienteDaoImpl() {
+    }
+
+    public ClienteDaoImpl(Class<Cliente> entityClass) {
+        super(entityClass);
+    }
+
+    
+    
     @Override
     public void ingresar(Cliente m) {
         this.create(m);
@@ -35,12 +45,18 @@ public class ClienteDaoImpl extends GenericaDaoImpl<Cliente> implements ICliente
 
     @Override
     public List<Cliente> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.findAll();
     }
 
     @Override
     public Cliente buscarPorid(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sentencia = "select t from Cliente t where t.idCliente = " +id;
+
+        TypedQuery<Cliente> typed = this.entityManager.createQuery(sentencia, Cliente.class);
+                
+        Cliente resultado = typed.getSingleResult();
+                        
+        return resultado;
     }
     
 }

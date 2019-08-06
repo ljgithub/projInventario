@@ -18,6 +18,15 @@ import javax.persistence.TypedQuery;
  */
 public class PedidoDaoImpl extends GenericaDaoImpl<Pedidos>implements IPedidoDao{
 
+    public PedidoDaoImpl() {
+    }
+
+    public PedidoDaoImpl(Class<Pedidos> entityClass) {
+        super(entityClass);
+    }
+
+    
+    
     @Override
     public void ingresar(Pedidos m) {
         this.create(m);

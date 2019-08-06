@@ -5,26 +5,26 @@
  */
 package com.uisrael.inventarioproyecto.Beans;
 
-import com.uisrael.inventarioproyecto.controlador.IMPL.ProveedorContrImpl;
-import com.uisrael.inventarioproyecto.controlador.IProveedorController;
-import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
+import com.uisrael.inventarioproyecto.controlador.IClienteController;
+import com.uisrael.inventarioproyecto.controlador.IMPL.ClienteContrImpl;
+import com.uisrael.inventarioproyecto.modelo.Entidades.Cliente;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.Dependent;
+import javax.faces.bean.ManagedBean;
 
 /**
  *
  * @author JAVIER
  */
-@ManagedBean(name = "proveedorBean")
-@ViewScoped
-public class ProveedorBean  implements Serializable{
+@ManagedBean(name = "clienteBean")
+@Dependent
+public class ClienteBean implements Serializable {
 
-    private static final IProveedorController controllerProveedor = new ProveedorContrImpl();
-               
+    private static final IClienteController controllerCliente = new ClienteContrImpl();
+
     private String nombres;
     private String apellidos;
     private int telefono;
@@ -33,41 +33,37 @@ public class ProveedorBean  implements Serializable{
     private String ciudad;
     private String email;
     private int estadoProveedor;
-    
-    
-   private Proveedor proveedor;
-   private List<Proveedor> consultaListProveedores;
-    
-    /**
-     * Creates a new instance of ProveedorBean
-     */
-    public ProveedorBean() {
+
+    private Cliente cliente;
+    private List<Cliente> consultaListaClientes;
+
+    public ClienteBean() {
     }
 
     @PostConstruct
-    public void init(){
-        llenarDatos();
+    public void init() {
+        llenarData();
     }
-    
-    public void llenarDatos(){
-        consultaListProveedores = controllerProveedor.listar();
+
+    public void llenarData() {
+        consultaListaClientes = controllerCliente.listar();
     }
-    
-    
-    public void insertarProveedor(){
-        proveedor = new Proveedor();
-        proveedor.setNombres(nombres);
-        proveedor.setApellidos(apellidos);
-        proveedor.setTelefono(telefono);
-        proveedor.setCelular(celular);
-        proveedor.setDireccion(direccion);
-        proveedor.setCiudad(ciudad);
-        proveedor.setEmail(email);
-        controllerProveedor.ingresar(proveedor);
-        
-        llenarDatos();
+
+    public void insertar() {
+
+        cliente = new Cliente();
+        cliente.setNombres(nombres);
+        cliente.setApellidos(apellidos);
+        cliente.setTelefono(telefono);
+        cliente.setCelular(celular);
+        cliente.setDireccion(direccion);
+        cliente.setCiudad(ciudad);
+        cliente.setEmail(email);
+        controllerCliente.ingresar(cliente);
+
+        llenarData();
     }
-    
+
     public String getNombres() {
         return nombres;
     }
@@ -132,14 +128,21 @@ public class ProveedorBean  implements Serializable{
         this.estadoProveedor = estadoProveedor;
     }
 
-    public List<Proveedor> getConsultaListProveedores() {
-        return consultaListProveedores;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setConsultaListProveedores(List<Proveedor> consultaListProveedores) {
-        this.consultaListProveedores = consultaListProveedores;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
-    
-     
+
+    public List<Cliente> getConsultaListaClientes() {
+        return consultaListaClientes;
+    }
+
+    public void setConsultaListaClientes(List<Cliente> consultaListaClientes) {
+        this.consultaListaClientes = consultaListaClientes;
+    }
+
     
 }

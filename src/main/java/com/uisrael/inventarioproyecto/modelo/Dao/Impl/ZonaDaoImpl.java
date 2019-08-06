@@ -9,6 +9,7 @@ import com.uisrael.inventarioproyecto.controlador.IMPL.*;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Zona;
 import com.uisrael.inventarioproyecto.modelo.IZonaDao;
 import java.util.List;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -47,7 +48,13 @@ public class ZonaDaoImpl extends GenericaDaoImpl<Zona> implements IZonaDao{
 
     @Override
     public Zona buscarPorid(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sentencia = "select t from Zona t where t.idZona = " +id;
+
+        TypedQuery<Zona> typed = this.entityManager.createQuery(sentencia, Zona.class);
+                
+        Zona resultado = typed.getSingleResult();
+                        
+        return resultado;
     }
     
 }

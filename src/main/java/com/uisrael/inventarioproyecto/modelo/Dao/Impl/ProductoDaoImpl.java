@@ -26,7 +26,7 @@ public class ProductoDaoImpl extends GenericaDaoImpl<Producto>implements IProduc
     
     @Override
     public void ingresar(Producto m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.create(m);
     }
 
     @Override
