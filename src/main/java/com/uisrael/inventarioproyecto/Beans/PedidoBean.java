@@ -12,6 +12,7 @@ import com.uisrael.inventarioproyecto.controlador.IProveedorController;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Pedidos;
 import com.uisrael.inventarioproyecto.modelo.Entidades.Proveedor;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -31,7 +32,7 @@ public class PedidoBean implements Serializable{
     private static final IProveedorController controllerProveedor = new ProveedorContrImpl();
     
     private int idPedido;    
-    private Date fechaHoraPedido;
+    private String fechaHoraPedido;
     private String observaciones;
     private int fkIdProveedor;
     
@@ -39,11 +40,7 @@ public class PedidoBean implements Serializable{
     private List<Proveedor> consultaListaProveedores;
     private Pedidos pedido;
     private List<Pedidos> consultaListaPedidos;
-    
-    public void llenarData(){
-       consultaListaPedidos = controllerPedido.listar();
-       consultaListaProveedores = controllerProveedor.listar();
-    }
+
     
     /**
      * Creates a new instance of PedidoBean
@@ -57,11 +54,17 @@ public class PedidoBean implements Serializable{
         System.out.println("Majenador Pedido Cargado");
     }
     
+        
+    public void llenarData(){
+       consultaListaPedidos = controllerPedido.listar();
+       consultaListaProveedores = controllerProveedor.listar();
+    }
     
     public void insertarPedido(){
-        pedido = new Pedidos();
-        proveedor = controllerProveedor.buscarPorid(fkIdProveedor);
+        Date fechaPedido = Calendar.getInstance().getTime();
         
+        pedido = new Pedidos();
+        proveedor = controllerProveedor.buscarPorid(fkIdProveedor);                       
         pedido.setFechaHoraPedido(fechaHoraPedido);
         pedido.setObservaciones(observaciones);
         pedido.setProveedorPedido(proveedor);
